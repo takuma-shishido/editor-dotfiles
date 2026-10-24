@@ -1,0 +1,20 @@
+# Copy the settings you need to ~/.zshrc.local.
+# This file is documentation only; never commit secrets to it.
+
+# Language toolchains are not part of these dotfiles. Activate a version
+# manager here if this machine uses one.
+# eval "$(mise activate zsh)"
+
+# Disable automatic Zellij startup on this machine.
+# export DOTFILES_ZELLIJ_AUTO_START=0
+
+# Add a machine-specific command directory only when it exists.
+# if [[ -d "$HOME/.example/bin" ]]; then
+#   path=("$HOME/.example/bin" $path)
+# fi
+
+# Application-specific paths can be added conditionally on macOS.
+# app_tools="/Applications/Example.app/Contents/MacOS/tools"
+# if [[ -d "$app_tools" ]]; then
+#   path+=("$app_tools")
+# fi

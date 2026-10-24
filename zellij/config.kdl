@@ -1,0 +1,7 @@
+// Zellij Configuration
+// https://zellij.dev/documentation/configuration
+
+theme "nord"
+mouse_mode false
+show_startup_tips false
+show_release_notes false

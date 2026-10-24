@@ -1,0 +1,30 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            // Vendored zjstatus v0.22.0 (zellij-tile 0.43.1)
+            // sha256:4de426d20b1cbf861272e927aeeb5b49d92c17f0e2bb9d173f85bf7f0154dd53
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "{mode} #[fg=#81A1C1,bold]{session}"
+                format_center "{tabs}"
+                format_right  "{datetime}"
+                format_space  ""
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#4C566A]{char}"
+                border_position "top"
+
+                mode_normal  "#[bg=blue] "
+                mode_tmux    "#[bg=#D08770] "
+
+                tab_normal   "#[fg=#4C566A] {name} "
+                tab_active   "#[fg=#D8DEE9,bold,italic] {name} "
+
+                datetime          "#[fg=#8FBCBB,bold] {format} "
+                datetime_format   "%A, %d %b %Y %H:%M"
+                datetime_timezone "Asia/Tokyo"
+            }
+        }
+        children
+    }
+}

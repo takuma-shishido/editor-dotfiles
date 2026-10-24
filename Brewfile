@@ -1,0 +1,10 @@
+# Editor environment only. Language runtimes and toolchains are not managed here.
+brew "git"
+brew "make"
+brew "neovim"
+brew "tree-sitter-cli"
+brew "ripgrep"
+brew "fd"
+brew "zellij"
+brew "starship"
+brew "sheldon"

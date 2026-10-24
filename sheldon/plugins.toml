@@ -1,0 +1,31 @@
+shell = "zsh"
+
+[plugins]
+
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.get | nl }}"
+hooks = "{{ hooks?.pre | nl }}{% for file in files %}source \"{{ file }}\"\n{% endfor %}{{ hooks?.get | nl }}"
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+rev = "53a26e287fbbe2dcebb3aa1801546c6de32416fa"
+
+# Starship is activated in .zshrc
+# [plugins.starship]
+# inline = 'eval "$(starship init zsh)"'
+
+[plugins.zsh-completions]
+github = 'zsh-users/zsh-completions'
+rev = "8ddc4416dd4d2804668834bb42067feaddb9bb5a"
+
+[plugins.compinit]
+inline = 'autoload -Uz compinit && compinit'
+
+[plugins.zsh-autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+rev = "85919cd1ffa7d2d5412f6d3fe437ebdbeeec4fc5"
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+rev = "3d574ccf48804b10dca52625df13da5edae7f553"
+apply = ["defer"]
