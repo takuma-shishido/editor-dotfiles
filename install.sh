@@ -27,6 +27,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET_HOME="${DOTFILES_TARGET_HOME:-$HOME}"
 CONFIG_DIR="$TARGET_HOME/.config"
 
+# Ghostty on macOS also loads this path after the XDG one, so link here to
+# keep a single config that wins.
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    GHOSTTY_CONFIG="$TARGET_HOME/Library/Application Support/com.mitchellh.ghostty/config"
+else
+    GHOSTTY_CONFIG="$CONFIG_DIR/ghostty/config"
+fi
+
 # Installable components, in installation order.
 # Each record is "description|source:target|source:target|..."
 COMPONENTS=(
@@ -36,6 +44,8 @@ COMPONENTS=(
 |$SCRIPT_DIR/zellij/config.kdl:$CONFIG_DIR/zellij/config.kdl\
 |$SCRIPT_DIR/zellij/layouts:$CONFIG_DIR/zellij/layouts\
 |$SCRIPT_DIR/zellij/plugins:$CONFIG_DIR/zellij/plugins"
+    "Ghostty configuration\
+|$SCRIPT_DIR/ghostty/config:$GHOSTTY_CONFIG"
     "Zsh configuration\
 |$SCRIPT_DIR/zsh/.zshrc:$TARGET_HOME/.zshrc"
     "Starship prompt configuration\

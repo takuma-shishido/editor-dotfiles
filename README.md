@@ -1,6 +1,6 @@
 # dotfiles
 
-エディタ環境だけをまとめた個人用 dotfiles です。Neovim、Zellij、Zsh、Starship、Sheldon の設定を含みます。
+エディタ環境だけをまとめた個人用 dotfiles です。Neovim、Ghostty、Zellij、Zsh、Starship、Sheldon の設定を含みます。
 
 言語ランタイム（Node.js、Python、Rust など）や言語サーバーはここでは管理しません。必要になったら、プロジェクトごとに追加してください。
 
@@ -9,6 +9,7 @@
 | ディレクトリ | リンク先 |
 |---|---|
 | `nvim/` | `~/.config/nvim` |
+| `ghostty/config` | macOS: `~/Library/Application Support/com.mitchellh.ghostty/config`<br>Linux: `~/.config/ghostty/config` |
 | `zellij/config.kdl`, `layouts/`, `plugins/` | `~/.config/zellij/` |
 | `zsh/.zshrc` | `~/.zshrc` |
 | `starship/starship.toml` | `~/.config/starship.toml` |
